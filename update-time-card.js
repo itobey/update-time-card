@@ -1,4 +1,4 @@
-class SimpleClockCard extends HTMLElement {
+class UpdateTimeCard extends HTMLElement {
 
 	set hass(hass) {
 
@@ -7,7 +7,7 @@ class SimpleClockCard extends HTMLElement {
 			const card = document.createElement('HA-card');
 			this.content = document.createElement('div');
 			this.content.style.padding = this.config.padding_size ? this.config.padding_size : '16px';
-			this.content.style.fontSize = this.config.font_size ? this.config.font_size : '4rem' ;
+			this.content.style.fontSize = this.config.font_size ? this.config.font_size : '1rem' ;
 			this.style.textAlign = 'center';
 			this.content.style.display = 'inline-block';
 			card.appendChild(this.content);
@@ -33,14 +33,14 @@ class SimpleClockCard extends HTMLElement {
 				s = addZero(s);
 
 				let  use_military = config.use_military !== undefined ? config.use_military : true;
-				let  hide_seconds = config.hide_seconds !== undefined ? config.hide_seconds : false;
+				let  hide_seconds = config.hide_seconds !== undefined ? config.hide_seconds : true;
 
 				let time_str =  (use_military ? h : h % 12 ) +
                    ":" +
                    m +
                    (hide_seconds ? "" : ":" + s ) +
                    (use_military ? " " : " " + p );
-				content.innerHTML = time_str;
+				content.innerHTML = "last updated: " + time_str;
 			}
 		}
 	}
@@ -54,4 +54,4 @@ class SimpleClockCard extends HTMLElement {
     }
 }
 
-customElements.define('simple-clock-card', SimpleClockCard);
+customElements.define('update-time-card', UpdateTimeCard);
