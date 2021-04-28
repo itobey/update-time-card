@@ -8,6 +8,10 @@ class UpdateTimeCard extends HTMLElement {
 			this.content = document.createElement('div');
 			this.content.style.padding = this.config.padding_size ? this.config.padding_size : '16px';
 			this.content.style.fontSize = this.config.font_size ? this.config.font_size : '1rem' ;
+			this.content.style.display = 'flex';
+                        this.content.style.justifyContent = 'flex-end';
+                        card.style.background = 'none';
+                        card.style.boxShadow = 'none';
 			this.style.textAlign = 'center';
 			this.content.style.display = 'inline-block';
 			card.appendChild(this.content);
