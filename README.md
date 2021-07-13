@@ -14,6 +14,19 @@ Changes include:
 
 ![screenshot](doc/last-updated.png)  
 
+## example usage
+
+Add the following lines to a view in '*cards:*' as a *'manual card'* or use your yaml configuration and add:
+
+```
+type: custom:update-time-card
+hide_seconds: true
+font_size: 1rem
+```
+
+--- 
+Original Readme
+---
 
 # Installation:
 
